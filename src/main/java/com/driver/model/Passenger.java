@@ -12,13 +12,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "passenger")
-public class Passenger {
-
-
+public class Passenger{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int passengerId;
-
+    private  Integer passengerId;
     private String name;
 
     private int age;
