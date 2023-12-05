@@ -96,7 +96,7 @@ public class TicketService {
 
 
                 if(availableSeats<passengerList.size()){
-                     throw new Exception("Less tickets are available");
+                      return id;
                 }
 
                 train.getBookedTickets().add(ticket);
