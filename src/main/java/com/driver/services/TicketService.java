@@ -95,8 +95,8 @@ public class TicketService {
                 ticket.setTotalFare(totalFare);
 
 
-                if(availableSeats<passengerList.size()){
-                      return null;
+                if(availableSeats<bookTicketEntryDto.getNoOfSeats()){
+                    throw new Exception("Less tickets are available");
                 }
 
                 train.getBookedTickets().add(ticket);
