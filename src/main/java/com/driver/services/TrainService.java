@@ -119,7 +119,9 @@ public class TrainService {
             // trains has its tickets , go through each and every ticket  and see the boarding point of ticket
 //             and count the passengers count for ticket
                List<String> RouteList=Arrays.asList(train.getRoute().split(","));
-               if(RouteList.contains(station)){
+               if(!RouteList.contains(station.name())) {
+                   throw new Exception("Train is not passing from this station");
+               }
 
                    for(Ticket ticket: train.getBookedTickets()){
                        if(ticket.getFromStation()==station){
@@ -127,10 +129,7 @@ public class TrainService {
                        }
                    }
 
-               }else{
-                   throw new Exception("Train is not passing from this station");
 
-               }
         }
 
         return CountOfPassengers;

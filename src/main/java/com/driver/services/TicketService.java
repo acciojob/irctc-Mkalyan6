@@ -84,6 +84,7 @@ public class TicketService {
 
 
 
+
                    // Now there are sufficient seats for booking the ticket preferred by user
                  Ticket ticket=new Ticket();
                  ticket.setFromStation(bookTicketEntryDto.getFromStation());
@@ -95,7 +96,7 @@ public class TicketService {
 
 
                 if(availableSeats<passengerList.size()){
-                    throw new Exception("Invalid stations");
+                     throw new Exception("Less tickets are available");
                 }
 
                 train.getBookedTickets().add(ticket);
