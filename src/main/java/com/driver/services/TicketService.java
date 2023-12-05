@@ -96,7 +96,7 @@ public class TicketService {
 
 
                 if(availableSeats<passengerList.size()){
-                      return id;
+                      return null;
                 }
 
                 train.getBookedTickets().add(ticket);
